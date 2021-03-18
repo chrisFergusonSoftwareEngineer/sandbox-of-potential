@@ -9,7 +9,7 @@ import (
 func main() {
 	fmt.Println("Running the SANDBOX OF POTENTIAL!!!")
 
-	temporal.FindEndOfMonth()
+	temporal.TryBigSeconds()
 
 	//using defer to (hopefully) ensure other threads complete first.
 	defer fmt.Println("Exiting the SANDBOX OF POTENTIAL!!!")
