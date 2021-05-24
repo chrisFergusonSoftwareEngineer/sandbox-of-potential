@@ -8,10 +8,10 @@ import (
 func ChannelingTest() {
 	// unbuffered := make(chan string)
 
-	// unbuffered <- "Unbuffered "
+	// unbuffered <- "Unbuffered " // causes PANIC
 	// unbuffered <- "test."
 
-	// fmt.Printf(<-unbuffered) // causes PANIC
+	// fmt.Printf(<-unbuffered)
 	// fmt.Printf(<-unbuffered)
 
 	// fmt.Println()
@@ -25,7 +25,7 @@ func ChannelingTest() {
 	fmt.Println(strconv.Itoa(len(buffered)) + " of " + strconv.Itoa(cap(buffered)))
 	buffered <- "Test."
 	fmt.Println(strconv.Itoa(len(buffered)) + " of " + strconv.Itoa(cap(buffered)))
-	//buffered <- "overflow"  // causes PANIC
+	// buffered <- "overflow" // causes PANIC
 
 	fmt.Printf(<-buffered)
 	fmt.Printf(<-buffered)
