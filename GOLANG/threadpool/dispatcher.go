@@ -1,5 +1,7 @@
 package threadpool
 
+import "fmt"
+
 type Pool struct {
 	internalQueue chan Task
 	readyPool     chan chan Task //boss says hey i have a new job at my desk workers who available can get it in this way he does not have to ask current status of workers
@@ -11,7 +13,7 @@ var workerPool *Pool
 
 func GetWorkerPool() *Pool {
 	if nil == workerPool {
-		workerPool = newWorkerPool(4, 1000)
+		workerPool = newWorkerPool(10, 1000)
 	}
 
 	return workerPool
@@ -74,6 +76,8 @@ func (q *Pool) Enqueue(job Task) bool {
 	case q.internalQueue <- job:
 		return true
 	default:
+		fmt.Println("########## ERROR - failed to enque task!!!!!")
+		//panic(nil)
 		return false
 	}
 }

@@ -10,17 +10,18 @@ func (query *QueryForRollup) Do() {
 	search := SearchTask{
 		Date:       query.Date,
 		Id:         query.Id,
-		ResultChan: make(chan int),
+		ResultChan: make(chan int, 1),
 	}
 
 	// dispatch search
-	GetWorkerPool().Enqueue(&search)
+	if GetWorkerPool().Enqueue(&search) {
 
-	processSearch := ProcessSearchResult{
-		Query:  *query,
-		Search: search,
+		processSearch := ProcessSearchResult{
+			Query:  *query,
+			Search: search,
+		}
+		GetWorkerPool().Enqueue(&processSearch)
 	}
-	GetWorkerPool().Enqueue(&processSearch)
 }
 
 type ProcessSearchResult struct {
