@@ -10,7 +10,8 @@
             "request": "launch",
             "mode": "debug",
             "console": "internalConsole",
-            "program": "${workspaceFolder}/PYTHON/sandbox.py"
+            "program": "${workspaceFolder}/PYTHON/sandbox.py",
+            "args": ["Ferg"]
         },
         {
             "name": "GOLANG",
