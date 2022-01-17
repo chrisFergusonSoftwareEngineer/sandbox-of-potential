@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/chrisFergusonSoftwareEngineer/sandbox-of-potential/GOLANG/json"
+	"github.com/chrisFergusonSoftwareEngineer/sandbox-of-potential/GOLANG/builtin"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 	//using defer to (hopefully) ensure other threads complete first.
 	defer fmt.Println("Exiting the SANDBOX OF POTENTIAL!!!")
 
-	json.ParsePayloadWithExtraField()
+	builtin.TestArrayPointerFunction()
 }
 
 // Testing git changes.
