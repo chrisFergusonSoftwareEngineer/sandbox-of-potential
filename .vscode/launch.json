@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "PYTHON",
+            "type": "python",
+            "request": "launch",
+            "mode": "debug",
+            "console": "internalConsole",
+            "program": "${workspaceFolder}/PYTHON/sandbox.py"
+        },
+        {
             "name": "GOLANG",
             "type": "go",
             "request": "launch",
