@@ -1,0 +1,3 @@
+from avro_examples.encoding_example import EncodingExample
+
+EncodingExample.basicEncodingExample()

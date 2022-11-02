@@ -1,0 +1,11 @@
+{"namespace": "gsm.dms",
+ "type": "record",
+ "name": "pre_processing_workflow",
+ "fields": [
+     {"name": "message",  "type": "string"},
+     {"name": "inputFileUri", "type": "string"},
+     {"name": "outputFileUri", "type": "string"}, 
+     {"name": "success", "type": "boolean"},
+     {"name": "preProcessingStep", "type": "string"} 
+ ]
+}

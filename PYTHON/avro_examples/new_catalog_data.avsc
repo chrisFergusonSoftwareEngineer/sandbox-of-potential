@@ -1,0 +1,9 @@
+{"namespace": "gsm.dms",
+ "type": "record",
+ "name": "new_catalog_data",
+ "fields": [
+     {"name": "dataAssetType", "type": "string"},
+     {"name": "sourceId",  "type": "string"},
+     {"name": "fileUri", "type": "string"}
+ ]
+}
