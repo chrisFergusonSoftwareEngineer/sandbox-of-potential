@@ -7,7 +7,7 @@ class Abstract_Test_Class:
     def hello_name(self, name:Any):
         pass
 
-# documentation
+# documentation, more docs
 class Concrete_Test_Class(Abstract_Test_Class):
     def hello_name(self, name:str):
         print(f"Hello, {name}")
