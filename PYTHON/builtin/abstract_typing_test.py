@@ -7,7 +7,7 @@ class Abstract_Test_Class:
     def hello_name(self, name:Any):
         pass
 
-# documentation, more docs, continuing to tinker.
+# documentation, replacing test to force change.
 class Concrete_Test_Class(Abstract_Test_Class):
     def hello_name(self, name:str):
         print(f"Hello, {name}")
