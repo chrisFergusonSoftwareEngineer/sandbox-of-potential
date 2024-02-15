@@ -1,8 +1,9 @@
 #!/bin/sh
 
 set -e
+if [ ! -z $(git diff --cached --name-only --diff-filter=dx -- *.py) ]; then
+    python -m black $(git diff --cached --name-only --diff-filter=dx -- *.py)
+    python .githooks/lint.py -p ./PYTHON/ -t 7.0
 
-python -m black $(git diff --cached --name-only --diff-filter=dx -- *.py)
-python .githooks/lint.py -p ./PYTHON/ -t 7.0
-
-git add $(git diff --cached --name-only --diff-filter=dx)
+    git add $(git diff --cached --name-only --diff-filter=dx)
+fi
