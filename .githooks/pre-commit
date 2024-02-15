@@ -1,9 +1,18 @@
 #!/bin/sh
 
 set -e
-if [ ! -z $(git diff --cached --name-only --diff-filter=dx -- *.py) ]; then
-    python -m black $(git diff --cached --name-only --diff-filter=dx -- *.py)
-    python .githooks/lint.py -p ./PYTHON/ -t 7.0
 
-    git add $(git diff --cached --name-only --diff-filter=dx)
+# list of python files that have been added for commit, filter exclusing (d)eleted and unknown status(x)
+python_files=$(git diff --cached --name-only --diff-filter=dx -- *.py)
+
+# IF [ any python files were comitted (filter excuding (d)eletions and unknown status(x)) ]
+if [ ! -z $python_files ]; then
+
+    # black format the python files that have been added for commit.
+    python -m black $python_files
+    # lint the project with a minimum threshold of 7.0
+    python .githooks/lint.py -p . -t 7.0
+
+    # add files that were formatted by black
+    git add $python_files
 fi
