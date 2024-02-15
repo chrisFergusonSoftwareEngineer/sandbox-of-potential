@@ -11,7 +11,7 @@ if [ ! -z $python_files ]; then
     # black format the python files that have been added for commit.
     python -m black $python_files
     # lint the project with a minimum threshold of 7.0
-    python .githooks/lint.py -p . -t 7.0
+    python .githooks/lint.py -p ./PYTHON -t 7.0
 
     # add files that were formatted by black
     git add $python_files

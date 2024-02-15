@@ -1,8 +1,11 @@
+"""Subscription looper class."""
+
 import time
 from threading import Thread
 
+
 class SubscribeLooper(Thread):
-    def __init__(self, scrabble:list, callback):
+    def __init__(self, scrabble: list, callback):
         self.scrabble = scrabble
         self.callback = callback
 
