@@ -5,6 +5,8 @@ from threading import Thread
 
 
 class SubscribeLooper(Thread):
+    """Subscription loop runner."""
+
     def __init__(self, scrabble: list, callback):
         self.scrabble = scrabble
         self.callback = callback
