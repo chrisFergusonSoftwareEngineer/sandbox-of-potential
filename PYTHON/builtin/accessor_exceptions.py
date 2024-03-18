@@ -1,11 +1,19 @@
+"""Simple sample to trigger exceptions to inspect them."""
 
-class geeks: 
-    def __init__(self, name, roll): 
-        self.name = name 
+
+class Geeks:  # pylint: disable=too-few-public-methods
+    """Simple class that should be a dictionary."""
+
+    def __init__(self, name, roll):
+        self.name = name
         self.roll = roll
 
-class AccessorExceptions:
+
+class AccessorExceptions:  # pylint: disable=too-few-public-methods
+    """Simple class to trigger exceptions for review."""
+
     def review_exceptions(self):
+        """Simple method to intentionally trigger exceptions for review."""
         list_of_things = None
 
         try:
@@ -28,7 +36,7 @@ class AccessorExceptions:
             print(f"List of None Exception: {type(unknown_list_of_none)}")
 
         list_of_things = []
-        list_of_things.append(geeks("ferg", 20))
+        list_of_things.append(Geeks("ferg", 20))
 
         try:
             print(f"{list_of_things[0].name}")

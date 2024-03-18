@@ -2,6 +2,7 @@ package builtin
 
 import "fmt"
 
+// a non-python file.
 func TestArrayPointerFunction() {
 	var valueTesting *[]int
 
